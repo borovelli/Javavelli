@@ -13,7 +13,7 @@ public class FibonacciForBigInteger {
 		BigDecimal f2 = BigDecimal.ZERO;
 		BigDecimal f1 = BigDecimal.ONE;
 		BigDecimal f = BigDecimal.ONE;
-		long j = 2; 
+		long j = 1; 
 		System.out.println(1 + " fibonacci is " + f2);
 		System.out.println(2 + " fibonacci is " + f1);
 
