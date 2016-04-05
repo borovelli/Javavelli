@@ -1,4 +1,4 @@
-package EratosphenePrime;
+package com.github.borovelli.javavelli.fibonacci;
 
 public class FibonacciFor {
 

@@ -1,6 +1,6 @@
-package EratosphenePrime;
+package com.github.borovelli.javavelli.factorial;
 
-public class Factorial {
+public class FactorialReccursive {
 
 	public static double factorial(double n) {
 		if (inepsilondistance(n, 0)) {

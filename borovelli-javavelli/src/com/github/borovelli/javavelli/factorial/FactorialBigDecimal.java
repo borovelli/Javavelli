@@ -1,4 +1,4 @@
-package EratosphenePrime;
+package com.github.borovelli.javavelli.factorial;
 
 import java.math.BigDecimal;
 
@@ -15,7 +15,7 @@ public class FactorialBigDecimal {
 			BigDecimal multiplicand = new BigDecimal(i);
 			resultat = resultat.multiply(multiplicand);
 		}
-		System.out.println(" factorial is equal " + resultat);
+		System.out.println(" factorial is equal " + resultat.toPlainString()); // converts BigDecimal to String
 
 		long endTime = System.currentTimeMillis(); // timer finish
 		long difference = endTime - beginTime;
@@ -23,5 +23,3 @@ public class FactorialBigDecimal {
 	}
 
 }
-// x in power x
-// fibonacci
