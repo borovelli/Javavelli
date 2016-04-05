@@ -6,7 +6,7 @@ public class FibonacciArray {
 
 		long beginTime = System.currentTimeMillis(); // timer start
 
-		int N = 93; // amount of Fibonacci numbers to be found
+		int N = 93; // amount of Fibonacci numbers to be found (max 93)
 		long[] fib = new long[N];
 		fib[0] = 0;
 		System.out.println(1 + " fibonacci is " + fib[0]);
