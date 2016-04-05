@@ -15,7 +15,7 @@ public class FibonacciForBigInteger {
 		BigDecimal f = BigDecimal.ONE;
 		long j = 1; 
 		System.out.println(1 + " fibonacci is " + f2);
-		System.out.println(2 + " fibonacci is " + f1);
+		System.out.println(2 + " fibonacci is " + f1); 
 
 		while (j < N) {
 			f = f2.add(f1); // addition for BigDecimal
