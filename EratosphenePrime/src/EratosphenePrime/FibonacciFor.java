@@ -10,7 +10,7 @@ public class FibonacciFor {
 		long f2 = 0;
 		long f1 = 1;
 		long f = 1;
-		long j = 2;
+		long j = 2; 
 		System.out.println(1 + " fibonacci is " + f2);
 		System.out.println(2 + " fibonacci is " + f1);
 
