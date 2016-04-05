@@ -28,7 +28,7 @@ public class Prime {
 
 		long beginTime = System.currentTimeMillis();
 
-		int K = 7920;
+		int K = 100000000;
 		int j = 1;
 		for (int n = 0; n < K; n++) {
 			if (isPrime(n)) {
