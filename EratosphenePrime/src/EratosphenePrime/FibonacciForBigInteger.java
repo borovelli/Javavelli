@@ -31,27 +31,3 @@ public class FibonacciForBigInteger {
 	}
 }
 
-/*	
-public class BigDecimalDemo { 
-
-public static void main(String[] args) { 
-
-// create a BigDecimal object 
-BigDecimal bg; 
-
-// create a String object 
-String s; 
-
-MathContext mc = new MathContext(3); // 3 precision 
-
-bg = new BigDecimal("1234E4", mc); 
-
-// assign the string value of bg to s 
-s = bg.toString(); 
-
-String str = "String value of " + bg + " is " + s; 
-
-// print s value 
-System.out.println( str ); 
-} 
-}*/
