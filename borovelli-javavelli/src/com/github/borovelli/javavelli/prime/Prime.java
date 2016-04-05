@@ -1,4 +1,4 @@
-package Prime;
+package com.github.borovelli.javavelli.prime;
 
 public class Prime {
 

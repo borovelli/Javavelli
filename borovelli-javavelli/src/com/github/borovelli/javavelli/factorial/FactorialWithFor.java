@@ -1,4 +1,4 @@
-package EratosphenePrime;
+package com.github.borovelli.javavelli.factorial;
 
 public class FactorialWithFor {
 

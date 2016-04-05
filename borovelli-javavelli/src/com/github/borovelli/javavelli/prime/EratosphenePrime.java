@@ -1,4 +1,5 @@
-package EratosphenePrime;
+package com.github.borovelli.javavelli.prime;
+
 
 public class EratosphenePrime {
 

@@ -1,4 +1,4 @@
-package Maths;
+package com.github.borovelli.javavelli.scanner;
 
 import java.util.*;
 

@@ -1,4 +1,4 @@
-package EratosphenePrime;
+package com.github.borovelli.javavelli.fibonacci;
 
 import java.math.BigDecimal;
 
@@ -13,16 +13,16 @@ public class FibonacciForBigInteger {
 		BigDecimal f2 = BigDecimal.ZERO;
 		BigDecimal f1 = BigDecimal.ONE;
 		BigDecimal f = BigDecimal.ONE;
-		long j = 2; 
-		System.out.println(1 + " fibonacci is " + f2);
-		System.out.println(2 + " fibonacci is " + f1);
+		long j = 1;
+		System.out.println(1 + " fibonacci is " + f2.toPlainString());
+		System.out.println(2 + " fibonacci is " + f1.toEngineeringString());
 
 		while (j < N) {
 			f = f2.add(f1); // addition for BigDecimal
 			f2 = f1;
 			f1 = f;
 			j++;
-			System.out.println(j + " fibonacci is " + f);
+			System.out.println(j + " fibonacci is " + f.toEngineeringString());
 		}
 
 		long endTime = System.currentTimeMillis(); // timer finish
@@ -30,4 +30,3 @@ public class FibonacciForBigInteger {
 		System.out.println(difference + " milliseconds ");
 	}
 }
-
