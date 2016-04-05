@@ -6,18 +6,20 @@ public class FibonacciFor {
 
 		long beginTime = System.currentTimeMillis(); // timer start
 
-		int N = 44; // amount of Fibonacci numbers to be found
-		long[] fib = new long[N];
-		fib[0] = 0;
-		System.out.println(1 + " fibonacci is " + fib[0]);
-		fib[1] = 1;
-		System.out.println(2 + " fibonacci is " + fib[1]);
-		fib[2] = 1;
-		System.out.println(3 + " fibonacci is " + fib[2]);
+		int N = 93; // amount of Fibonacci numbers to be found
+		long f2 = 0;
+		long f1 = 1;
+		long f = 1;
+		long j = 2;
+		System.out.println(1 + " fibonacci is " + f2);
+		System.out.println(2 + " fibonacci is " + f1);
 
-		for (int i = 3; i < N; i++) {
-			fib[i] = fib[i - 2] + fib[i - 1];
-			System.out.println(i + 1 + " fibonacci is " + fib[i]);
+		while (j < N) {
+			f = f2 + f1;
+			f2 = f1;
+			f1 = f;
+			j++;
+			System.out.println(j + " fibonacci is " + f);
 		}
 
 		long endTime = System.currentTimeMillis(); // timer finish

@@ -14,7 +14,7 @@ public class FibonacciReccursion {
 
 		long beginTime = System.currentTimeMillis(); // timer start
 		for (long i = 0; i < 44; i++) {
-			System.out.println(i + " fibonacci is " + fib(i));
+			System.out.println(i + 1 + " fibonacci is " + fib(i));
 		}
 
 		long endTime = System.currentTimeMillis(); // timer finish
