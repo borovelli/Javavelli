@@ -23,9 +23,9 @@ public class ReverseString {
 	public static String Reverse(String input) {
 		char[] borovin = input.toCharArray();
 		int L = borovin.length;
-		char[] buffer = new char[L + 1];
+		char[] buffer = new char[L];
 		for (int i = 0; i < L; i++) {
-			buffer[L - i] = borovin[i];
+			buffer[L - i - 1] = borovin[i];
 		}
 		String result = new String(buffer);
 		return result;
@@ -39,8 +39,8 @@ public class ReverseString {
 		String input = sc.next();
 		String result = Reverse(input);
 
-		System.out.println("Original string " + input);
-		System.out.println("Reverse string " + result);
+		System.out.println("Original string " + "("+ input +")");
+		System.out.println("Reverse string " + "("+ result +")");
 
 	}
 
