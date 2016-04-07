@@ -73,9 +73,11 @@ public class ReverseStringNoBuffer {
 		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
 		String input = sc.next();
+		
 		String result = Reverse(input);
-
+		String output = new StringBuilder(input).reverse().toString();
 		System.out.println("Original string " + "(" + input + ")");
+		System.out.println("Java Reversed string " + "(" + output + ")");
 		System.out.println("Reverse string " + "(" + result + ")");
 
 	}
