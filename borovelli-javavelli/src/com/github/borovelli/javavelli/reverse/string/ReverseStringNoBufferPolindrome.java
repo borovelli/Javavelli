@@ -12,8 +12,8 @@ public class ReverseStringNoBufferPolindrome {
 
 	@Test
 	public void testReverse() {
-		String input = "qwertyuiop";
-		boolean testPassed = Reverse(input).equals("poiuytrewq");
+		String input = "mamama1amamam";
+		boolean testPassed = Reverse(input).equals(input);
 		assertTrue(testPassed);
 		if (testPassed) {
 			System.out.println("Test passed");
