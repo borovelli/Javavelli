@@ -15,8 +15,8 @@ public class NewtonSqrt {
 
 		assertTrue(testRoot(2));
 		assertTrue(testRoot(3));
-		assertTrue(testRoot(4));
-		assertTrue(testRoot(9));
+		assertTrue(testRoot(64));
+		assertTrue(testRoot(121));
 
 	}
 
@@ -35,8 +35,9 @@ public class NewtonSqrt {
 		// timer starts in nanoseconds
 		double t = sqrt(c);
 		double check = t * t;
-		System.out.println("   x * x = " + check);
+		System.out.println("   Newton x  = " + t);
 		System.out.println("   Math.sqrt " + Math.sqrt(c));
+		System.out.println("   x * x = " + check);
 
 		// print out the estimate of the square root of c
 		long endTime = System.nanoTime(); // timer finishes
@@ -53,7 +54,7 @@ public class NewtonSqrt {
 		while (Math.abs(c / t - t) > epsilon * t) {
 			// unless t is epsilon close to c
 			// take the t = (t and c/t) average
-			System.out.println(t);
+//			System.out.println(t);
 			t = (c / t + t) / 2.0;
 		}
 		return t;
