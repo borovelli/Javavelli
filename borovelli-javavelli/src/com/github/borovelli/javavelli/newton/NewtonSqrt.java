@@ -23,6 +23,8 @@ public class NewtonSqrt {
 		}
 		double check = t * t;
 		System.out.println("   x * x = " + check);
+		System.out.println("   Math.sqrt " + Math.sqrt(c));
+
 		// print out the estimate of the square root of c
 		long endTime = System.nanoTime(); // timer finishes
 		long difference = endTime - beginTime;
