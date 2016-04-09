@@ -69,6 +69,7 @@ public class IntCheckSorting {
 			int n = input.nextInt();
 			borovin.add(n);
 		}
+	
 		int[] n = borovin.toArray(new int[0]);
 		Sort(borovin);
 		System.out.println("The array is now complete " + borovin.toString());
