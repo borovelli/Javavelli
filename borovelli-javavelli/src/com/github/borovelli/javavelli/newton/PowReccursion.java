@@ -1,3 +1,4 @@
+
 package com.github.borovelli.javavelli.newton;
 
 //import java.math.BigDecimal;
@@ -5,24 +6,21 @@ import java.util.Scanner;
 
 public class PowReccursion {
 
-	public static double PowerReccursion(double b, double p) {
-		
-		if (inepsilondistance(p, 0)) {
+	public static double PowerReccursion (double b, double p) {
+
+		if (inepsilondistance(p, 0, 1e-15)) {
 			return 1; // check if p is zero
 		}
 		double result = b * PowerReccursion(b, p - 1);
 		return result;
 	}
 
-	private static boolean inepsilondistance(double a, double b) {
-		double EPSILON = 1e-15;
-		if (Math.abs(a - b) < EPSILON) {
-			return true;
-		}
-		return false;
+	public static boolean inepsilondistance (double a, double b, double EPSILON) {
+		double distance = Math.abs(a - b);
+		return distance < EPSILON;
 	}
 
-	public static void main(String[] args) {
+	public static void main (String[] args) {
 
 		System.out.println("The base is");
 		@SuppressWarnings("resource")
