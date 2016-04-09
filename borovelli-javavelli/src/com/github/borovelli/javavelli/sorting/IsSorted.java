@@ -27,7 +27,7 @@ public class IsSorted {
 			}
 			if (array[i] > array[i + 1]) {
 				check = false;
-				break;
+				break; 
 			}
 		}
 		return check;
