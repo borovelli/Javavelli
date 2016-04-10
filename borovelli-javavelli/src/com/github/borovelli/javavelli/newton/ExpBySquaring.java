@@ -22,7 +22,7 @@ public class ExpBySquaring {
 		double distance = Math.abs(a - b);
 		return distance < EPSILON;
 	}
-
+ 
 	@SuppressWarnings("resource")
 	public static void main(String[] args) {
 
