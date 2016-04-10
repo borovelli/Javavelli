@@ -32,7 +32,7 @@ public class IntMergeSort {
 				+ ")");
 
 		int[] java_array = copy(list);
-		int[] merge_array = copy(list);
+		int[] merge_array = copy(list); 
 
 		Arrays.sort(java_array);
 		mergeSort(merge_array);
