@@ -25,39 +25,46 @@ public class MergeSort {
 	}
 
 	public static void mergeSort(int[] list, int lowIndex, int highIndex) {
-		if (lowIndex == highIndex)
+		if (lowIndex == highIndex) // check if we have only 1 index
 			return;
 		else {
-			int midIndex = (lowIndex + highIndex) / 2;
-			mergeSort(list, lowIndex, midIndex);
-			mergeSort(list, midIndex + 1, highIndex);
-			merge(list, lowIndex, midIndex, highIndex);
+			int midIndex = (lowIndex + highIndex) / 2; // define the middle
+			
+			//RECCURSION STARTS - will go from bottom (1 index only) to final array
+			mergeSort(list, lowIndex, midIndex); // run same function for left half
+			mergeSort(list, midIndex + 1, highIndex);// run same function for right half
+			merge(list, lowIndex, midIndex, highIndex); // merge halfs
 		}
 	}
 
 	public static void merge(int[] list, int lowIndex, int midIndex,
 			int highIndex) {
-		int[] L = new int[midIndex - lowIndex + 2];
 
-		for (int i = lowIndex; i <= midIndex; i++) {
+		//		LEFT PART of THE INITIAL ARRAY
+		int[] L = new int[midIndex - lowIndex + 2]; // new array L
+
+		for (int i = lowIndex; i <= midIndex; i++) { // copy 1/2 of list[] to L[]
 			L[i - lowIndex] = list[i];
 		}
-		L[midIndex - lowIndex + 1] = Integer.MAX_VALUE;
+		L[midIndex - lowIndex + 1] = Integer.MAX_VALUE; // marker at the END of L[]
+
+		//		RIGHT PART of THE INITIAL ARRAY
 		int[] R = new int[highIndex - midIndex + 1];
 
-		for (int i = midIndex + 1; i <= highIndex; i++) {
+		for (int i = midIndex + 1; i <= highIndex; i++) {// copy 1/2 of list[] to R[]
 			R[i - midIndex - 1] = list[i];
 		}
-		R[highIndex - midIndex] = Integer.MAX_VALUE;
+		R[highIndex - midIndex] = Integer.MAX_VALUE; // marker at the BEGINNING of R[]
 		int i = 0, j = 0;
 
+		//		FINALLY - - - THE MERGE ITSELF
 		for (int k = lowIndex; k <= highIndex; k++) {
-			if (L[i] <= R[j]) {
-				list[k] = L[i];
-				i++;
+			if (L[i] <= R[j]) { // start comparison from i=j=0;
+				list[k] = L[i]; // rewrite list[] upon result
+				i++; // switch to the next in L[]
 			} else {
-				list[k] = R[j];
-				j++;
+				list[k] = R[j];// rewrite list[] upon result
+				j++;// switch to the next in R[]
 			}
 		}
 	}
