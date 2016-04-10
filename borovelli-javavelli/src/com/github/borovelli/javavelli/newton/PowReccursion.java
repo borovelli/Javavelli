@@ -20,10 +20,10 @@ public class PowReccursion {
 		return distance < EPSILON;
 	}
 
+	@SuppressWarnings("resource")
 	public static void main (String[] args) {
 
 		System.out.println("The base is");
-		@SuppressWarnings("resource")
 		Scanner base = new Scanner(System.in);
 		double b = base.nextDouble();
 		System.out.println("The power is");

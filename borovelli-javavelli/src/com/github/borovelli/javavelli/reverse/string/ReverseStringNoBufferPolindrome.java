@@ -35,23 +35,22 @@ public class ReverseStringNoBufferPolindrome {
 		return result;
 	}
 
-	//
-
+	
 	public static void main(String[] args) {
 
 		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
 		String input = sc.next();
-	//	String reverse = Reverse(input);
+		// String reverse = Reverse(input);
 		boolean result = Reverse(input).equals(input);
-		
+
 		if (result) {
 			System.out.println("Yes");
 		}
-		if (! result) {
+		if (!result) {
 			System.out.println("No");
 		}
-		
+
 	}
 
 }

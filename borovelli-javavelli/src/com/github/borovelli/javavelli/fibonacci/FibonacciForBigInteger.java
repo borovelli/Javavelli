@@ -1,6 +1,6 @@
 
 package com.github.borovelli.javavelli.fibonacci;
-
+//import com.github.borovelli.javavelli.reverse.string.ReverseString;  for importing methods from other classes
 import static org.junit.Assert.assertTrue;
 
 import java.math.BigInteger;
@@ -15,7 +15,7 @@ public class FibonacciForBigInteger {
 
 		long N = 300; // amount of Fibonacci numbers to be found
 		fibonacci(N);
-
+	//	ReverseString.Reverse(input);  for importing methods from other classes
 		long endTime = System.currentTimeMillis(); // timer finish
 		long difference = endTime - beginTime;
 		System.out.println(difference + " milliseconds ");
@@ -49,3 +49,4 @@ public class FibonacciForBigInteger {
 		return f;
 	}
 }
+

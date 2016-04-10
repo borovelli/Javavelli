@@ -6,15 +6,14 @@ public class FactorialReccursive {
 		if (inepsilondistance(n, 0)) {
 			return 1; // check if n is zero
 		}
-		double a = factorial(n - 1); // call recursive function factorial (n-1)
+		double b = n * factorial(n - 1); // call recursive function factorial (n-1)
 		// it will reduce the n untill 0 at this point, and will only proceed to
 		// the next one after
-		double b = n * a;
 		return b;
 	}
 
 	private static boolean inepsilondistance(double a, double b) {
-		double EPSILON = 0.0000000000000000000001d;
+		double EPSILON = 1e-15;
 		if (Math.abs(a - b) < EPSILON) {
 			return true;
 		}
