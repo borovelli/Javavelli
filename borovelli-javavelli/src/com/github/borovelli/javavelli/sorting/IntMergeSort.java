@@ -12,37 +12,51 @@ import jdk.nashorn.internal.runtime.arrays.ArrayData;
 import org.junit.Test;
 
 public class IntMergeSort {
-	/*
-	 * // TEST TEST TEST TEST TEST TEST TEST TEST
-	 * 
-	 * @Test public void testReverse() {
-	 * 
-	 * assertTrue(checkSorting(new int[] {})); assertTrue(checkSorting(new int[]
-	 * { 1 })); assertTrue(checkSorting(new int[] { 1, 2 }));
-	 * assertTrue(checkSorting(new int[] { 2, 1 })); assertTrue(checkSorting(new
-	 * int[] { 1, 2, 1 })); assertTrue(checkSorting(RandomIntArray(100)));
-	 * 
-	 * }
-	 * 
-	 * private boolean checkSorting(int[] origial) { //
-	 * System.out.println("checkSorting " + "(" + Arrays.toString(origial) + //
-	 * ")");
-	 * 
-	 * int[] java_array = copy(origial); int[] merge_array = copy(origial);
-	 * 
-	 * Arrays.sort(java_array); mergeSort(merge_array);
-	 * 
-	 * boolean areEqual = Arrays.equals(java_array, merge_array); if (!areEqual)
-	 * { System.out.println("Failed to sort " + "(" + Arrays.toString(origial) +
-	 * ")"); System.out.println("        result" + "(" +
-	 * Arrays.toString(merge_array) + ")"); System.out.println("     should be"
-	 * + "(" + Arrays.toString(java_array) + ")"); } return areEqual; }
-	 * 
-	 * private int[] copy(int[] src) { int[] copy = new int[src.length];
-	 * System.arraycopy(src, 0, copy, 0, src.length); return copy; }
-	 * 
-	 * // TEST TEST TEST TEST TEST TEST TEST TEST
-	 */
+
+	// TEST TEST TEST TEST TEST TEST TEST TEST
+
+	@Test
+	public void testReverse() {
+
+		assertTrue(checkSorting(new int[] {}));
+		assertTrue(checkSorting(new int[] { 1 }));
+		assertTrue(checkSorting(new int[] { 1, 2 }));
+		assertTrue(checkSorting(new int[] { 2, 1 }));
+		assertTrue(checkSorting(new int[] { 1, 2, 1 }));
+		assertTrue(checkSorting(RandomIntArray(100)));
+
+	}
+
+	private boolean checkSorting(int[] list) { 
+		System.out.println("checkSorting " + "(" + Arrays.toString(list)
+				+ ")");
+
+		int[] java_array = copy(list);
+		int[] merge_array = copy(list);
+
+		Arrays.sort(java_array);
+		mergeSort(merge_array);
+
+		boolean areEqual = Arrays.equals(java_array, merge_array);
+		if (!areEqual) {
+			System.out.println("Failed to sort " + "("
+					+ Arrays.toString(list) + ")");
+			System.out.println("        result" + "("
+					+ Arrays.toString(merge_array) + ")");
+			System.out.println("     should be" + "("
+					+ Arrays.toString(java_array) + ")");
+		}
+		return areEqual;
+	}
+
+	private int[] copy(int[] src) {
+		int[] copy = new int[src.length];
+		System.arraycopy(src, 0, copy, 0, src.length);
+		return copy;
+	}
+
+	// TEST TEST TEST TEST TEST TEST TEST TEST
+
 	public static int[] RandomIntArray(int N) {
 
 		int[] random = new int[N]; // create the Array with N slots
