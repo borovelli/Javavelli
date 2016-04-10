@@ -2,12 +2,12 @@ package com.github.borovelli.javavelli.sorting;
 
 import static org.junit.Assert.assertTrue;
 
-import java.io.UnsupportedEncodingException;
+//import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
-import jdk.nashorn.internal.runtime.arrays.ArrayData;
+//import jdk.nashorn.internal.runtime.arrays.ArrayData;
 
 import org.junit.Test;
 
