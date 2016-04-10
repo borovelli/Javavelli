@@ -25,7 +25,7 @@ public class IntMergeSort {
 		assertTrue(checkSorting(new int[] { 1, 2, 1 }));
 		assertTrue(checkSorting(RandomIntArray(100)));
 
-	}
+	} 
 
 	private boolean checkSorting(int[] list) { 
 		System.out.println("checkSorting " + "(" + Arrays.toString(list)
