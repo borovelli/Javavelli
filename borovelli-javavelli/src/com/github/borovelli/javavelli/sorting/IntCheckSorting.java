@@ -40,7 +40,7 @@ public class IntCheckSorting {
 	 * assertTrue(testPassed); }
 	 */
 
-	public static long[] RandomIntArray(int N) {
+/*	public static long[] RandomIntArray(int N) {
 
 		long[] random = new long[N]; // create the Array with N slots
 		Random rnd = new Random(); // create a local variable for Random
@@ -49,31 +49,46 @@ public class IntCheckSorting {
 			random[i] = rnd.nextInt();
 		}
 		return random;
-	}
+		}
+*/
 
-	public static boolean Sort(int[] N) {
-
-		return true;
+	public static boolean isSorted(int[] array) {
+		boolean check = true;
+		int L = array.length;
+		
+		for (int i = 0; i < L - 1; i++) {
+			
+			if (array[i] <= array[i + 1]) {
+				int a = array[i];
+				check = true;
+			}
+			if (array[i] > array[i + 1]) {
+				check = false;
+				break;
+			}
+			
+		}
+		return check;
 	}
 
 	public static void main(String[] args) {
 
-		System.out.println("enter integer, press enter");
-		System.out.println("to finish filling enter any non-integer");
-		@SuppressWarnings("resource")
-		Scanner input = new Scanner(System.in);
+//		System.out.println("enter integer, press enter");
+//		System.out.println("to finish filling enter any non-integer");
+//		Scanner input = new Scanner(System.in);
 		// creating a list with dynamic array of integers
-		List<Integer> borovin = new ArrayList<Integer>();
+//		List<Integer> borovin = new ArrayList<Integer>();
 		// filling array unless non-integer is entered
-		while (input.hasNextInt()) {
-			int n = input.nextInt();
-			borovin.add(n);
-		}
+//		while (input.hasNextInt()) {
+//			int n = input.nextInt();
+//			borovin.add(n);
+//		}
+
+		// int[] n = borovin.toArray(new int[0]);
+		int[] array = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+		boolean a = isSorted(array);
 	
-		int[] n = borovin.toArray(new int[0]);
-		Sort(borovin);
-		System.out.println("The array is now complete " + borovin.toString());
+		System.out.println(" Expression ..The array is sorted.. is  " + a);
 	}
 
 }
-
