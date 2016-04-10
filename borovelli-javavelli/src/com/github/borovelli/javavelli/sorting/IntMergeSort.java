@@ -128,7 +128,7 @@ public class IntMergeSort {
 		@SuppressWarnings("resource")
 		Scanner input = new Scanner(System.in);
 		int N = input.nextInt();
-		int[] list = RandomIntArray(N);
+		int[] list = RandomIntArray(N); 
 
 		if (IsSorted.isSorted(list)) {
 			String randomStr = Arrays.toString(list);// random String
