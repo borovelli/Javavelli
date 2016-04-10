@@ -3,12 +3,9 @@ package com.github.borovelli.javavelli.sorting;
 
 import static org.junit.Assert.assertTrue;
 
-import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
-
-import jdk.nashorn.internal.runtime.arrays.ArrayData;
 
 import org.junit.Test;
 
@@ -23,8 +20,7 @@ public class MergeSort {
 		assertTrue(checkSorting(new int[] {2, 1}));
 		assertTrue(checkSorting(new int[] {1, 2, 1}));
 		assertTrue(checkSorting(RandomIntArray(100)));
-		
-		
+
 		mergeSort(RandomIntArray(100), -1, 0);
 
 	}
@@ -69,7 +65,10 @@ public class MergeSort {
 			return;
 		else {
 			int midIndex = (lowIndex + highIndex) / 2; // define the middle
-		
+			if (midIndex < 0) {
+				throw new Error("Проёбано: " + midIndex);
+			}
+
 			// RECCURSION STARTS - will go from bottom (1 index only) to final array
 
 			mergeSort(list, midIndex + 1, highIndex);// run same function for right half
