@@ -34,6 +34,23 @@ public class IsSorted {
 		}
 		return check;
 	}
+	
+	public static boolean isSorted (byte[] array) {
+		boolean check = true;
+		int L = array.length;
+
+		for (int i = 0; i < L - 1; i++) {
+
+			if (array[i] <= array[i + 1]) {
+				check = true;
+			}
+			if (array[i] > array[i + 1]) {
+				check = false;
+				break;
+			}
+		}
+		return check;
+	}
 
 	public static void main (String[] args) {
 
