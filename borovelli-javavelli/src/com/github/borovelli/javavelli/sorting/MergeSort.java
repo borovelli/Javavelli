@@ -12,6 +12,42 @@ import jdk.nashorn.internal.runtime.arrays.ArrayData;
 import org.junit.Test;
 
 public class MergeSort {
+	
+	@Test
+	public void testReverse () {
+
+		assertTrue(checkSorting(new int[] {}));
+		assertTrue(checkSorting(new int[] {1}));
+		assertTrue(checkSorting(new int[] {1, 2}));
+		assertTrue(checkSorting(new int[] {2, 1}));
+		assertTrue(checkSorting(new int[] {1, 2, 1}));
+		assertTrue(checkSorting(RandomIntArray(100)));
+
+	}
+	
+	private boolean checkSorting (int[] origial) {
+	// System.out.println("checkSorting " + "(" + Arrays.toString(origial) + ")");
+
+			int[] java_array = copy(origial);
+			int[] merge_array = copy(origial);
+
+			Arrays.sort(java_array);
+			mergeSort(merge_array);
+
+			boolean areEqual = Arrays.equals(java_array, merge_array);
+			if (!areEqual) {
+				System.out.println("Failed to sort " + "(" + Arrays.toString(origial) + ")");
+				System.out.println("        result" + "(" + Arrays.toString(merge_array) + ")");
+				System.out.println("     should be" + "(" + Arrays.toString(java_array) + ")");
+			}
+			return areEqual;
+		}
+
+		private int[] copy (int[] src) {
+			int[] copy = new int[src.length];
+			System.arraycopy(src, 0, copy, 0, src.length);
+			return copy;
+		}
 
 	public static int[] RandomIntArray(int N) {
 
@@ -97,6 +133,23 @@ public class MergeSort {
 		long endTime = System.currentTimeMillis(); // timer finish
 		long difference = endTime - beginTime;
 		System.out.println(difference + " milliseconds ");
+	}
+	
+	public static void mergeSort (int[] list) {
+
+		int lowIndex = 0;
+		int highIndex = list.length - 1;
+
+		if (IsSorted.isSorted(list)) {
+// String randomString = Arrays.toString(list);// random String
+// System.out.println("Array is already sorted " + "(" + randomString + ")");
+		} else {
+// System.out.println("Random Array " + "(" + Arrays.toString(list) + ")");
+
+			mergeSort(list, lowIndex, highIndex); // sorting random integer
+
+// System.out.println("Sorted Array " + "(" + Arrays.toString(list) + ")");
+		}
 	}
 
 }
