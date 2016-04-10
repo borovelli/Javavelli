@@ -18,21 +18,21 @@ public class IntMergeSort {
 	@Test
 	public void testReverse() {
 
-		assertTrue(checkSorting(new int[] {}));
-		assertTrue(checkSorting(new int[] { 1 }));
-		assertTrue(checkSorting(new int[] { 1, 2 }));
-		assertTrue(checkSorting(new int[] { 2, 1 }));
-		assertTrue(checkSorting(new int[] { 1, 2, 1 }));
+		assertTrue(checkSorting(new byte[] {}));
+		assertTrue(checkSorting(new byte[] { 1 }));
+		assertTrue(checkSorting(new byte[] { 1, 2 }));
+		assertTrue(checkSorting(new byte[] { 2, 1 }));
+		assertTrue(checkSorting(new byte[] { 1, 2, 1 }));
 		assertTrue(checkSorting(RandomIntArray(100)));
 
 	} 
 
-	private boolean checkSorting(int[] list) { 
+	private boolean checkSorting(byte[] list) { 
 		System.out.println("checkSorting " + "(" + Arrays.toString(list)
 				+ ")");
 
-		int[] java_array = copy(list);
-		int[] merge_array = copy(list); 
+		byte[] java_array = copy(list);
+		byte[] merge_array = copy(list); 
 
 		Arrays.sort(java_array);
 		mergeSort(merge_array);
@@ -49,30 +49,30 @@ public class IntMergeSort {
 		return areEqual;
 	}
 
-	private int[] copy(int[] src) {
-		int[] copy = new int[src.length];
+	private byte[] copy(byte[] src) {
+		byte[] copy = new byte[src.length];
 		System.arraycopy(src, 0, copy, 0, src.length);
 		return copy;
 	}
 
 	// TEST TEST TEST TEST TEST TEST TEST TEST
 
-	public static int[] RandomIntArray(int N) {
+	public static byte[] RandomIntArray(int N) {
 
-		int[] random = new int[N]; // create the Array with N slots
+		byte[] random = new byte[N]; // create the Array with N slots
 		Random rnd = new Random(); // create a local variable for Random
 		for (int i = 0; i < random.length; i++) // filling with randoms
 		{
 			random[i] = ((byte) rnd.nextInt());
-			random[i] = (int) random[i];
+//			random[i] = (int) random[i];
 		}
 		return random;
 	}
 
 	// getting the array list[] and preparing for the mergeSort method
-	public static void mergeSort(int[] list) {
+	public static void mergeSort(byte[] list) {
 
-		int[] buffer = new int[list.length];
+		byte[] buffer = new byte[list.length];
 		int lowIndex = 0;
 		int highIndex = list.length - 1;
 		mergeSort(list, buffer, lowIndex, highIndex);
@@ -80,7 +80,7 @@ public class IntMergeSort {
 
 	// Starting the mergeSort method with reccursion
 
-	public static void mergeSort(int[] list, int[] buffer, int lowIndex,
+	public static void mergeSort(byte[] list, byte[] buffer, int lowIndex,
 			int highIndex) {
 		if (lowIndex < highIndex) {
 			int midIndex = (highIndex + lowIndex) / 2;
@@ -92,7 +92,7 @@ public class IntMergeSort {
 
 	// Starting the merge method (no sorting yet)
 
-	public static void merge(int[] list, int[] buffer, int lowIndex,
+	public static void merge(byte[] list, byte[] buffer, int lowIndex,
 			int midIndex, int highIndex) {
 		for (int i = lowIndex; i <= highIndex; i++) {
 			buffer[i] = list[i];
@@ -128,7 +128,7 @@ public class IntMergeSort {
 		@SuppressWarnings("resource")
 		Scanner input = new Scanner(System.in);
 		int N = input.nextInt();
-		int[] list = RandomIntArray(N); 
+		byte[] list = RandomIntArray(N); 
 
 		if (IsSorted.isSorted(list)) {
 			String randomStr = Arrays.toString(list);// random String
