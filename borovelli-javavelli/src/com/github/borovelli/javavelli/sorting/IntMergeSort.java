@@ -1,3 +1,4 @@
+
 package com.github.borovelli.javavelli.sorting;
 
 import static org.junit.Assert.assertTrue;
@@ -16,40 +17,41 @@ public class IntMergeSort {
 	// TEST TEST TEST TEST TEST TEST TEST TEST
 
 	@Test
-	public void testReverse() {
+	public void testReverse () {
 
 		assertTrue(checkSorting(new byte[] {}));
-		assertTrue(checkSorting(new byte[] { 1 }));
-		assertTrue(checkSorting(new byte[] { 1, 2 }));
-		assertTrue(checkSorting(new byte[] { 2, 1 }));
-		assertTrue(checkSorting(new byte[] { 1, 2, 1 }));
+		assertTrue(checkSorting(new byte[] {1}));
+		assertTrue(checkSorting(new byte[] {1, 2}));
+		assertTrue(checkSorting(new byte[] {2, 1}));
+		assertTrue(checkSorting(new byte[] {1, 2, 1}));
 		assertTrue(checkSorting(RandomIntArray(100)));
 
-	} 
+	}
 
-	private boolean checkSorting(byte[] list) { 
-		System.out.println("checkSorting " + "(" + Arrays.toString(list)
-				+ ")");
+	private boolean checkSorting (byte[] list) {
+		System.out.println("checkSorting " + "(" + Arrays.toString(list) + ")");
 
 		byte[] java_array = copy(list);
-		byte[] merge_array = copy(list); 
+		byte[] merge_array = copy(list);
 
 		Arrays.sort(java_array);
 		mergeSort(merge_array);
 
 		boolean areEqual = Arrays.equals(java_array, merge_array);
 		if (!areEqual) {
-			System.out.println("Failed to sort " + "("
-					+ Arrays.toString(list) + ")");
-			System.out.println("        result" + "("
-					+ Arrays.toString(merge_array) + ")");
-			System.out.println("     should be" + "("
-					+ Arrays.toString(java_array) + ")");
+			System.out.println("Failed to sort " + "(" + Arrays.toString(list) + ")");
+			System.out.println("        result" + "(" + Arrays.toString(merge_array) + ")");
+			System.out.println("     should be" + "(" + Arrays.toString(java_array) + ")");
+		} else {
+			System.out.println("Success to sort " + "(" + Arrays.toString(list) + ")");
+			System.out.println("        result" + "(" + Arrays.toString(merge_array) + ")");
+			System.out.println("     should be" + "(" + Arrays.toString(java_array) + ")");
+			System.out.println();
 		}
 		return areEqual;
 	}
 
-	private byte[] copy(byte[] src) {
+	private byte[] copy (byte[] src) {
 		byte[] copy = new byte[src.length];
 		System.arraycopy(src, 0, copy, 0, src.length);
 		return copy;
@@ -57,20 +59,20 @@ public class IntMergeSort {
 
 	// TEST TEST TEST TEST TEST TEST TEST TEST
 
-	public static byte[] RandomIntArray(int N) {
+	public static byte[] RandomIntArray (int N) {
 
 		byte[] random = new byte[N]; // create the Array with N slots
 		Random rnd = new Random(); // create a local variable for Random
 		for (int i = 0; i < random.length; i++) // filling with randoms
 		{
-			random[i] = ((byte) rnd.nextInt());
-//			random[i] = (int) random[i];
+			random[i] = ((byte)rnd.nextInt());
+// random[i] = (int) random[i];
 		}
 		return random;
 	}
 
 	// getting the array list[] and preparing for the mergeSort method
-	public static void mergeSort(byte[] list) {
+	public static void mergeSort (byte[] list) {
 
 		byte[] buffer = new byte[list.length];
 		int lowIndex = 0;
@@ -80,8 +82,7 @@ public class IntMergeSort {
 
 	// Starting the mergeSort method with reccursion
 
-	public static void mergeSort(byte[] list, byte[] buffer, int lowIndex,
-			int highIndex) {
+	public static void mergeSort (byte[] list, byte[] buffer, int lowIndex, int highIndex) {
 		if (lowIndex < highIndex) {
 			int midIndex = (highIndex + lowIndex) / 2;
 			mergeSort(list, buffer, lowIndex, midIndex);
@@ -92,8 +93,7 @@ public class IntMergeSort {
 
 	// Starting the merge method (no sorting yet)
 
-	public static void merge(byte[] list, byte[] buffer, int lowIndex,
-			int midIndex, int highIndex) {
+	public static void merge (byte[] list, byte[] buffer, int lowIndex, int midIndex, int highIndex) {
 		for (int i = lowIndex; i <= highIndex; i++) {
 			buffer[i] = list[i];
 		}
@@ -121,14 +121,14 @@ public class IntMergeSort {
 		}
 	}
 
-	public static void main(String[] args) {
+	public static void main (String[] args) {
 		long beginTime = System.currentTimeMillis(); // timer start
 
 		System.out.println("Array size ");
 		@SuppressWarnings("resource")
 		Scanner input = new Scanner(System.in);
 		int N = input.nextInt();
-		byte[] list = RandomIntArray(N); 
+		byte[] list = RandomIntArray(N);
 
 		if (IsSorted.isSorted(list)) {
 			String randomStr = Arrays.toString(list);// random String
