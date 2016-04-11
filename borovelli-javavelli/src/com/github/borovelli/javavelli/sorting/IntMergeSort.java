@@ -25,6 +25,9 @@ public class IntMergeSort {
 		assertTrue(checkSorting(new byte[] {2, 1}));
 		assertTrue(checkSorting(new byte[] {1, 2, 1}));
 		assertTrue(checkSorting(RandomIntArray(100)));
+		for (int k = 0; k < 100; k++) {
+			assertTrue(checkSorting(RandomIntArray(k)));
+		}
 
 	}
 
@@ -62,7 +65,7 @@ public class IntMergeSort {
 	public static byte[] RandomIntArray (int N) {
 
 		byte[] random = new byte[N]; // create the Array with N slots
-		Random rnd = new Random(); // create a local variable for Random
+		Random rnd = new Random(4); // create a local variable for Random
 		for (int i = 0; i < random.length; i++) // filling with randoms
 		{
 			random[i] = ((byte)rnd.nextInt());
