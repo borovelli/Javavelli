@@ -87,7 +87,7 @@ public class IntMergeSort {
 
 	public static void mergeSort (byte[] list, byte[] buffer, int lowIndex, int highIndex) {
 		if (lowIndex < highIndex) {
-			int midIndex = highIndex / 2 + lowIndex / 2;
+			int midIndex = (int)(((long)highIndex + (long)lowIndex) / 2L);
 			mergeSort(list, buffer, lowIndex, midIndex);
 			mergeSort(list, buffer, midIndex + 1, highIndex);
 			merge(list, buffer, lowIndex, midIndex, highIndex);
