@@ -1,10 +1,15 @@
+
 package com.github.borovelli.javavelli.prime;
+
+import static org.junit.Assert.assertTrue;
 
 import java.util.Scanner;
 
+import org.junit.Test;
+
 public class ElucidCGD {
 
-	private static int cdg(int a, int b) {
+	private static int cdg (final int a, final int b) {
 
 		if (a > b) {
 			return cdg(b, a);
@@ -21,23 +26,46 @@ public class ElucidCGD {
 		return cdg(a, b - a);
 	}
 
-	public static void main(String[] args) {
+	public static void main (final String[] args) {
 
-		long beginTime = System.currentTimeMillis();
+		final long beginTime = System.currentTimeMillis();
 
 		System.out.println(" Enter the p value ");
 		@SuppressWarnings("resource")
-		Scanner sc = new Scanner(System.in);
-		int a = sc.nextInt();
+		final Scanner sc = new Scanner(System.in);
+		final int a = sc.nextInt();
 		System.out.println(" Enter the q value ");
 		@SuppressWarnings("resource")
-		Scanner input = new Scanner(System.in);
-		int b = input.nextInt();
+		final Scanner input = new Scanner(System.in);
+		final int b = input.nextInt();
 		System.out.println(" CGD of p and q is " + cdg(a, b));
 
-		long endTime = System.currentTimeMillis();
-		long difference = endTime - beginTime;
+		final long endTime = System.currentTimeMillis();
+		final long difference = endTime - beginTime;
 		System.out.println(difference + " milliseconds ");
+	}
+
+	@Test
+	public void test () {
+		for (int i = 1; i < 100; i++) {
+			for (int j = 1; j < 100; j++) {
+				for (int k = 1; k < 100; k++) {
+					final int a = i * j;
+					final int b = i * k;
+					final int cdg = cdg(a, b);
+					if (cdg == 0) {
+						throw new Error("a=" + a + " b=" + b + " cdg=" + cdg);
+					}
+
+					assertTrue(a % cdg == 0);
+					assertTrue(b % cdg == 0);
+					assertTrue(cdg(b / cdg, a / cdg) == 1);
+					System.out.println("a=" + a + " b=" + b + " cdg=" + cdg);
+				}
+
+			}
+		}
+
 	}
 
 }
