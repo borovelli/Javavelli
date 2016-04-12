@@ -25,6 +25,9 @@ public class IntMergeSort {
 		assertTrue(checkSorting(new byte[] {2, 1}));
 		assertTrue(checkSorting(new byte[] {1, 2, 1}));
 		assertTrue(checkSorting(RandomIntArray(100)));
+		for (int k = 0; k < 100; k++) {
+			assertTrue(checkSorting(RandomIntArray(k)));
+		}
 
 	}
 
@@ -62,7 +65,7 @@ public class IntMergeSort {
 	public static byte[] RandomIntArray (int N) {
 
 		byte[] random = new byte[N]; // create the Array with N slots
-		Random rnd = new Random(); // create a local variable for Random
+		Random rnd = new Random(4); // create a local variable for Random
 		for (int i = 0; i < random.length; i++) // filling with randoms
 		{
 			random[i] = ((byte)rnd.nextInt());
@@ -84,7 +87,7 @@ public class IntMergeSort {
 
 	public static void mergeSort (byte[] list, byte[] buffer, int lowIndex, int highIndex) {
 		if (lowIndex < highIndex) {
-			int midIndex = highIndex / 2 + lowIndex / 2;
+			int midIndex = (int)(((long)highIndex + (long)lowIndex) / 2L);
 			mergeSort(list, buffer, lowIndex, midIndex);
 			mergeSort(list, buffer, midIndex + 1, highIndex);
 			merge(list, buffer, lowIndex, midIndex, highIndex);
