@@ -19,7 +19,7 @@ public class ElucidCGD {
 			return a;
 		}
 		return cdg(a, b-a);
-	}
+	} 
 
 	public static void main(String[] args) {
 
