@@ -5,21 +5,21 @@ import java.util.Scanner;
 public class ElucidCGD {
 
 	private static int cdg(int a, int b) {
-		
-		if(a>b){
-			return cdg(b,a);
-		} 
-		if(a == b){
+
+		if (a > b) {
+			return cdg(b, a);
+		}
+		if (a == b) {
 			return a;
 		}
-		if(a == 1){
+		if (a == 1) {
 			return 1;
 		}
-		if (b%a == 0){
+		if (b % a == 0) {
 			return a;
 		}
-		return cdg(a, b-a);
-	} 
+		return cdg(a, b - a);
+	}
 
 	public static void main(String[] args) {
 
